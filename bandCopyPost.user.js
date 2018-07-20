@@ -3,7 +3,7 @@
 // @namespace AdGuard
 // @description Show hidden "Copy post to other band" option in BAND
 // @description:ko BAND에서 숨겨진 "다른 밴드에 올리기" 옵션을 표시합니다
-// @version 0.0.5-DEV
+// @version 0.0.6-DEV
 // @license LGPL-3.0; https://github.com/PresentKim/BandCopyPost-AdGuard/blob/master/LICENSE
 // @downloadURL https://github.com/PresentKim/BandCopyPost-AdGuard/blob/master/bandCopyPost.user.js?raw=true
 // @updateURL https://github.com/PresentKim/BandCopyPost-AdGuard/blob/master/bandCopyPost.meta.js?raw=true
@@ -24,9 +24,17 @@ window.addEventListener("load", function () {
             console.debug(options);
             //TODO: Fix a problem that was run before options were loaded
             if (options.length > 0) {
+                var exists = false;
                 for (var i = 0; i < options.length; i++) {
-                    var option = options[i];
-                    console.debug(option);
+                    console.debug(options[i].firstChild);
+                    if (options[i].firstChild.dataset.menueventname === "postMoreAction:copyPost") {
+                        exists = true;
+                        console.debug("[Band CopyPost] Already exists copyPost option");
+                        break;
+                    }
+                }
+                if (!exists) {
+                    console.debug("[Band CopyPost] Not exists copyPost option");
                 }
             }
         }
