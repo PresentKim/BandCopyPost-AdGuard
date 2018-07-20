@@ -3,7 +3,7 @@
 // @namespace AdGuard
 // @description Show hidden "Copy post to other band" option in BAND
 // @description:ko BAND에서 숨겨진 "다른 밴드에 올리기" 옵션을 표시합니다
-// @version 0.0.9-DEV
+// @version 0.0.10-DEV
 // @license LGPL-3.0; https://github.com/PresentKim/BandCopyPost-AdGuard/blob/master/LICENSE
 // @downloadURL https://github.com/PresentKim/BandCopyPost-AdGuard/blob/master/bandCopyPost.user.js?raw=true
 // @updateURL https://github.com/PresentKim/BandCopyPost-AdGuard/blob/master/bandCopyPost.meta.js?raw=true
@@ -13,7 +13,7 @@
 // @match https://band.us/*
 // @run-at document-start
 // ==/UserScript==
-console.log("[Band CopyPost] Init Band CopyPost by AdGuard v0.0.9-DEV");
+console.log("[Band CopyPost] Init Band CopyPost by AdGuard v0.0.10-DEV");
 
 window.addEventListener("load", function () {
     console.log("[Band CopyPost] Run Band CopyPost");
@@ -29,13 +29,10 @@ window.addEventListener("load", function () {
                         for (var i = 0; i < options.length; i++) {
                             if (options[i].firstChild.dataset.menueventname === "postMoreAction:copyPost") {
                                 exists = true;
-                                console.log("[Band CopyPost] Already exists copyPost option");
                                 break;
                             }
                         }
                         if (!exists) {
-                            console.log("[Band CopyPost] Not exists copyPost option");
-
                             var a = document.createElement("a");
                             a.href = "#";
                             a.dataset.menueventname = "postMoreAction:copyPost";
@@ -44,7 +41,6 @@ window.addEventListener("load", function () {
                             var li = document.createElement("li");
                             li.appendChild(a);
                             optionButtons[j].nextSibling.firstChild.appendChild(li);
-                            console.log("[Band CopyPost] Add copyPost option");
                         }
                     }
                 }
