@@ -15,11 +15,11 @@
 // ==/UserScript==
 console.log("[Band CopyPost] Init Band CopyPost by AdGuard");
 
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
     console.log("[Band CopyPost] Run Band CopyPost");
     document.body.addEventListener("click", function (event) {
         var target = event.path[0];
-        if(target.classList.value === "postSet _btnPostMore"){
+        if (target.classList.value === "postSet _btnPostMore") {
             console.log(target);
         }
     }, true);
