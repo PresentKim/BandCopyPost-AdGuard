@@ -3,7 +3,7 @@
 // @namespace AdGuard
 // @description Show hidden "Copy post to other band" option in BAND
 // @description:ko BAND에서 숨겨진 "다른 밴드에 올리기" 옵션을 표시합니다
-// @version 0.0.4-DEV
+// @version 0.0.5-DEV
 // @license LGPL-3.0; https://github.com/PresentKim/BandCopyPost-AdGuard/blob/master/LICENSE
 // @downloadURL https://github.com/PresentKim/BandCopyPost-AdGuard/blob/master/bandCopyPost.user.js?raw=true
 // @updateURL https://github.com/PresentKim/BandCopyPost-AdGuard/blob/master/bandCopyPost.meta.js?raw=true
